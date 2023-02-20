@@ -1,0 +1,13 @@
+/*SELECT titre,date_sortie,DATE_FORMAT(duree,"%H:%i")AS duree,nom
+FROM film
+INNER JOIN realisateur ON film.realisateur_id= realisateur.id_realisateur */
+
+/* SELECT titre, duree
+FROM film
+WHERE duree > "02:15"
+ORDER BY duree DESC */
+
+/* SELECT nom, prenom,titre, date_sortie
+FROM film
+INNER JOIN realisateur ON film.realisateur_id= realisateur.id_realisateur
+WHERE nom LIKE "Reeves" */
