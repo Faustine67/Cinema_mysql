@@ -11,3 +11,49 @@ ORDER BY duree DESC */
 FROM film
 INNER JOIN realisateur ON film.realisateur_id= realisateur.id_realisateur
 WHERE nom LIKE "Reeves" */
+
+/*SELECT COUNT(id_film), libelle
+FROM film
+INNER JOIN genre ON film.genre_id = genre.id_genre
+GROUP BY libelle ORDER BY libelle DESC */
+
+/*SELECT COUNT(id_film), nom, prenom
+FROM film
+INNER JOIN realisateur ON film.realisateur_id= realisateur.id_realisateur
+GROUP BY realisateur_id ORDER BY realisateur_id DESC */
+
+/* SELECT id_film,film.titre, acteur.nom, acteur.prenom, acteur.sexe
+FROM casting
+INNER JOIN film ON casting.film_id=film.id_film
+INNER JOIN acteur ON casting.acteur_id=acteur.id_acteur */
+
+/* SELECT titre, a.nom,a.prenom, r.nom, f.date_sortie
+FROM film f
+INNER JOIN casting c ON f.id_film=c.film_id
+INNER JOIN acteur a ON c.acteur_id=a.id_acteur
+INNER JOIN role r ON c.role_id=r.id_role */
+
+/*SELECT a.nom, a.prenom
+FROM acteur a
+INNER JOIN casting c ON a.id_acteur=c.acteur_id
+INNER JOIN film f ON c.film_id=f.id_film
+INNER JOIN realisateur r ON f.realisateur_id=r.id_realisateur
+WHERE a.nom=r.nom */
+
+/*SELECT titre, date_sortie
+FROM film
+WHERE (DATE_fORMAT(NOW(),"%Y")-date_sortie) <5 */
+
+/* SELECT COUNT(sexe), sexe
+FROM acteur
+GROUP BY sexe */
+
+/*SELECT nom, date_naissance
+FROM acteur
+WHERE (DATE_FORMAT(NOW(),"%Y")- date_format(date_naissance,"%Y")) >50 */
+
+/*SELECT nom, prenom,COUNT(acteur.id_acteur) AS countFilm
+FROM acteur
+INNER JOIN casting ON acteur.id_acteur= casting.acteur_id
+GROUP BY acteur.id_acteur
+HAVING countFilm >=3 */
